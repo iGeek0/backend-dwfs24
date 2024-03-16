@@ -1,11 +1,12 @@
 const express = require('express');
+require('dotenv').config();
 const app = express();
-const puerto = 3000;
+const puerto = process.env.PORT || 3000;
 
 const userRoutes = require('./routes/user.route');
 
 app.get('/', (req, res) => {
-    res.send('¡Hola, Express!');
+    res.send('API de usuarios V1.0.0');
 });
 
 // IIFE = Immediately Invoked Function Expression
