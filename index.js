@@ -6,6 +6,8 @@ const puerto = process.env.PORT || 3000;
 const userRoutes = require('./routes/user.route');
 const { dbConnection } = require('./database/config');
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
     res.send('API de usuarios V1.0.0');
 });
