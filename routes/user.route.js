@@ -4,12 +4,17 @@ const {
     userGet,
     userPost,
     userPut,
-    userDelete
+    userDelete,
+    login
 } = require('../controllers/user.controller');
+const auth = require('../middlewares/authorization');
 
-router.get('/users', userGet);
+
+router.get('/users', auth ,userGet);
 
 router.post('/users', userPost);
+
+router.post('/usuario/iniciar-sesion', login);
 
 router.put('/users', userPut);
 
