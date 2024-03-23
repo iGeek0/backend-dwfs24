@@ -4,15 +4,20 @@ const {
     userGet,
     userPost,
     userPut,
-    userDelete
+    userDelete,
+    login
 } = require('../controllers/user.controller');
 
-router.get('/users', userGet);
+const authMidd = require('../middleware/authorization');
 
-router.post('/users', userPost);
+router.get('/users', authMidd ,userGet);
+
+router.post('/users', userPost); // signup
 
 router.put('/users', userPut);
 
 router.delete('/users', userDelete);
+
+router.post('/login', login); //login
 
 module.exports = router;

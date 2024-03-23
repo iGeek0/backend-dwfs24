@@ -14,6 +14,10 @@ const UserSchema = Schema({
         type: String,
         required: [true, 'El correo es obligatorio'],
     },
+    password: {
+        type: String,
+        required: [true, 'El password es obligatorio'],
+    },
 }, {versionKey: false});
 
 module.exports = model('User', UserSchema);
