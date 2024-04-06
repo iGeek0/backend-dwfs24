@@ -21,5 +21,6 @@ app.get('/', (req, res) => {
 
 
 app.listen(puerto, () => {
+    // iniciando servidor web
     console.log('Servidor escuchando en http://localhost:' + puerto);
 });
